@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../services/productsService";
-import { Card, Button, Table } from "react-bootstrap";
+import { Button, Table, Container } from "react-bootstrap";
 
 function Home(){
 
@@ -19,7 +19,7 @@ function Home(){
 
   return (
     <div> 
-     
+     <Container>
      <Table striped bordered hover variant="dark">
        <thead>
          <tr>
@@ -41,13 +41,14 @@ function Home(){
            <td>Q{item.price}</td>
            <td>{item.ammount}</td>
            <td>{item.description}</td>
-           <td><Button variant="warning">Edit</Button></td>
+           <td><Button variant="warning" href={"/edit/"+item._id}>Edit</Button></td>
            <td><Button variant="danger">Delete</Button></td>
          </tr>
         ) } )
        }
        </tbody>
      </Table>
+     </Container>
     </div>
   )   
 }

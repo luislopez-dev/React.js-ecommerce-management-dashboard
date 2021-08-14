@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../services/productsService";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Container } from "react-bootstrap";
 
 function Create(){
  return (
     <div>
 
-      <h3>New Product</h3>
+      <Container>
+
+      <h2>New product</h2>
 
       <Form>
 
@@ -38,6 +40,8 @@ function Create(){
         <Button type="submit" variant="primary">Create</Button>
 
       </Form>
+
+      </Container>
     </div>
  )   
 }

@@ -1,8 +1,10 @@
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Container } from "react-bootstrap";
 
 function Register(){
     return (
       <div>
+
+        <Container>
         <h1>Register</h1>
 
         <Form>
@@ -34,6 +36,7 @@ function Register(){
           </Button>
 
         </Form>
+        </Container>
       </div>
     )
 }

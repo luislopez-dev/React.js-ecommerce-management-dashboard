@@ -1,10 +1,10 @@
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Container } from "react-bootstrap";
 
-function Edit(){
+function Update(){
     return (
     <div>
-
-<h3>Edit Product</h3>
+<Container>
+<h3>Update product</h3>
 
 <Form>
 
@@ -36,8 +36,8 @@ function Edit(){
   <Button type="submit" variant="warning">Update</Button>
 
 </Form>
-
+</Container>
     </div>)
 }
 
-export default Edit;
+export default Update;

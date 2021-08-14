@@ -1,5 +1,5 @@
 
-import { Button, Form } from 'react-bootstrap';
+import { Button, Container, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -7,6 +7,7 @@ function Login() {
     return (
     <div>
 
+<Container>
 <h1>Login</h1>
 
 <Form>
@@ -29,7 +30,7 @@ function Login() {
     Submit
   </Button>
 </Form>
-
+</Container>
     </div>
     )
 }

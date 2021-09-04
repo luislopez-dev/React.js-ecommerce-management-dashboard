@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <Navbar bg="dark">
-        <Navbar.Brand>Luis</Navbar.Brand>
+        <Navbar.Brand>My shop</Navbar.Brand>
         <Navbar.Collapse>
           <Nav.Link>Products</Nav.Link>
           <Nav.Link>New</Nav.Link>

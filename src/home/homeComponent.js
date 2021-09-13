@@ -23,11 +23,12 @@ function Home(){
   }, []);
 
   return (
-    <div> 
 
-     <Container>
+    <Container className='mt-5'>
 
-     <Table striped bordered hover variant="dark">
+      <h2 style={{textDecoration:"underline"}}>Products</h2>
+
+     <Table striped bordered hover>
        <thead>
          <tr>
            <th>#</th>
@@ -60,19 +61,18 @@ function Home(){
        <Modal.Header closeButton>
          <Modal.Title>Confirm</Modal.Title>
        </Modal.Header>
-       <Modal.Body>Delete {itemToDelete.name}</Modal.Body>
+       <Modal.Body>Remove {itemToDelete.name}</Modal.Body>
        <Modal.Footer>
          <Button variant="secondary" onClick={handleClose}>
            Cancel
          </Button>
          <Button variant="danger" onClick={handleClose}>
-           Yes, delete
+           Yes, remove
          </Button>
        </Modal.Footer>
      </Modal>
 
      </Container>
-    </div>
   )   
 }
 

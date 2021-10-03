@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../services/productsService";
-import { Button, Table, Container, Modal } from "react-bootstrap";
+import { Button, Table, Container, Modal, Image } from "react-bootstrap";
 
 function Home(){
 
@@ -16,7 +16,6 @@ function Home(){
     getProducts().then( products => {
       if(mounted){
         setProducts(products);
-        console.log(products);
       }
     })
     return () => mounted = false;
@@ -24,14 +23,14 @@ function Home(){
 
   return (
 
-    <Container className='mt-5'>
+    <Container>
 
-      <h2 style={{textDecoration:"underline"}}>Products</h2>
+    <h2 className='mt-5 mb-5'>Products</h2>
 
-     <Table striped bordered hover>
+     <Table  striped bordered hover style={{textAlign: "center"}}>
        <thead>
          <tr>
-           <th>#</th>
+           <th>Image</th>
            <th>Name</th>
            <th>Price</th>
            <th>Available</th>
@@ -44,8 +43,10 @@ function Home(){
        <tbody>
        {products.map( (item, i) => { return (
          <tr key={i}>
-           <td>{i + 1}</td>
-           <td>{item.name}</td>
+           <td> 
+            <Image src={item.imgURL} rounded style={{width:'100px'}}/> 
+           </td>
+           <td >{item.name}</td>
            <td>Q{item.price}</td>
            <td>{item.ammount}</td>
            <td>{item.description}</td>

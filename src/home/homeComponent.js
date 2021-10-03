@@ -60,15 +60,20 @@ function Home(){
 
      <Modal show={show} onHide={handleClose}>
        <Modal.Header closeButton>
-         <Modal.Title>Confirm</Modal.Title>
+         <Modal.Title>Delete</Modal.Title>
        </Modal.Header>
-       <Modal.Body>Remove {itemToDelete.name}</Modal.Body>
+       <Modal.Body style={{textAlign: "center"}}>
+        
+        <Image src={itemToDelete.imgURL} rounded style={{width:'100px'}}/> 
+        <br/>
+        {itemToDelete.name}                           
+       </Modal.Body>
        <Modal.Footer>
          <Button variant="secondary" onClick={handleClose}>
            Cancel
          </Button>
          <Button variant="danger" onClick={handleClose}>
-           Yes, remove
+           Delete
          </Button>
        </Modal.Footer>
      </Modal>

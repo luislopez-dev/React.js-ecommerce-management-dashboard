@@ -5,16 +5,13 @@ function Register(){
       <div>
 
         <Container>
-        <h1>Register</h1>
+        <h2 className='mt-5 mb-5'>Register</h2>
 
         <Form>
 
           <Form.Group className="mb-3">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="email"/>   
-            <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-            </Form.Text>         
+            <Form.Control type="email" placeholder="email"/>                 
           </Form.Group>
 
           <Form.Group className="mb-3">
@@ -25,10 +22,6 @@ function Register(){
           <Form.Group className="mb-3">
             <Form.Label>Confirm password</Form.Label>
             <Form.Control type="password" placeholder="password"/>
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
           </Form.Group>
 
           <Button variant="primary" type="submit">

@@ -1,5 +1,5 @@
 import { Form, Button, Container } from "react-bootstrap";
-import { getProduct } from "../services/productsService";
+import { getProduct, updateProduct } from "../services/productsService";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -13,47 +13,62 @@ function Update(){
     getProduct(id).then( product => {
         if(mounted){
             setProduct(product);
-            console.log(product);
         }
     });
     return () => mounted = false; 
   }, [])
+
+  async function handleSubmit (e){
+  
+    e.preventDefault();
+    const request = await updateProduct(
+                       product._id, 
+                       product.name, 
+                       product.price, 
+                       product.description, 
+                       product.ammount, 
+                       product.imgURL);                    
+
+    console.log(await request);
+  }
+
 
   return (
     <div>
     <Container >
     <h2 className='mt-5 mb-5'>Update product</h2>
 
-    <Form>
+  <Form onSubmit={handleSubmit}>
 
-  <Form.Group className="mb-2">
-    <Form.Label>Name</Form.Label>
-    <Form.Control placeholder="Name" value={product.name}></Form.Control>
-  </Form.Group>
+<Form.Group className="mb-2">
+  <Form.Label>Name</Form.Label>
+  <Form.Control value={product.name} onChange={(e)=>{setProduct({...product, name:e.target.value})}} required placeholder="Name"></Form.Control>
+</Form.Group>
 
-  <Form.Group className="mb-2">
-      <Form.Label>Price</Form.Label>
-      <Form.Control placeholder="price" type="number" value={product.price}></Form.Control>
-  </Form.Group>
+<Form.Group className="mb-2">
+    <Form.Label>Price</Form.Label>
+    <Form.Control value={product.price} onChange={(e)=>{setProduct({...product, price:e.target.value})}} required placeholder="Price" type="number"></Form.Control>
+</Form.Group>
 
-  <Form.Group className="mb-2">
-      <Form.Label>Description</Form.Label>
-      <Form.Control value={product.description}></Form.Control>
-  </Form.Group>
+<Form.Group className="mb-2">
+    <Form.Label>Description</Form.Label>
+    <Form.Control value={product.description} onChange={(e)=>{setProduct({...product, description:e.target.value})}}  placeholder="Description" required></Form.Control>
+</Form.Group>
 
-  <Form.Group className="mb-2">
-      <Form.Label>Ammount available</Form.Label>
-      <Form.Control type="number" value={product.ammount}></Form.Control>
-  </Form.Group>
+<Form.Group className="mb-2">
+    <Form.Label>Ammount available</Form.Label>
+    <Form.Control value={product.ammount} onChange={(e)=>{setProduct({...product, ammount:e.target.value})}} placeholder="Available" required type="number"></Form.Control>
+</Form.Group>
 
-  <Form.Group className="mb-2">
-      <Form.Label>Image link</Form.Label>
-      <Form.Control value={product.imgURL}></Form.Control>
-  </Form.Group>
+<Form.Group className="mb-2">
+    <Form.Label>Image link</Form.Label>
+    <Form.Control value={product.imgURL} onChange={(e)=>{setProduct({...product, imgURL:e.target.value})}} placeholder="IMG Link" required></Form.Control>
+</Form.Group>
 
-  <Button  className="mt-2" type="submit" variant="primary">Update</Button>
+<Button className="mt-2" type="submit" variant="primary">Update</Button>
 
-  </Form>
+</Form>
+
   </Container>
   </div>);
 

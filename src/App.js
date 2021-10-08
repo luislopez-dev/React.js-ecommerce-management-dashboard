@@ -10,30 +10,32 @@ import Login from './login/loginComponent';
 import Register from './register/registerComponent';
 import Update from './update/updateComponent';
 import Create from './create/createComponent';
-import Users from './users/usersComponent';
 import ProtectedRoute from './ProtectedRoute';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Nav, Navbar, Form, FormControl, Button } from "react-bootstrap";
+import { Container, Nav, Navbar, Button } from "react-bootstrap";
 
 function App() {
   return (
     <Router>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/home">Home</Navbar.Brand>
+          <Navbar.Brand href="/home">
+          <i className='fas fa-home'></i>
+          </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/create">New Product</Nav.Link>
-            <Nav.Link href="/users">Users</Nav.Link>
-          </Nav>
-          <Form className="d-flex">
-            <FormControl
-             type="search"
-             className="me-2"
-             aria-label="Search"
-            ></FormControl>
-          </Form>
-          <Button variant="primary">search</Button>
+      </Nav>
+        <Nav className="me-auto">          
+        </Nav>
+                
+      <Nav className="">
+        <Button className="" variant="primary">
+          <i className='fas fa-sign-out-alt'></i>
+        </Button>
+       </Nav>
+
         </Container>
+
       </Navbar>
     <div>
       {/* A <Switch> looks through its children <Route>s and
@@ -53,8 +55,6 @@ function App() {
         <ProtectedRoute exact path="/create" component={Create} />
       
         <ProtectedRoute exact path="/home" component={Home} />
-
-        <ProtectedRoute exact path="/users" component={Users} />
 
         <Redirect from="/" to="/home" />
 

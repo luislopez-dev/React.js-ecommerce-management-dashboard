@@ -1,1 +1,3 @@
-Ecommerce fronted in React.js
+# React.js Ecommerce management dashboard
+
+

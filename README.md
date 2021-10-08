@@ -8,14 +8,19 @@
 * [Technology](#technology)
 * [Installation](#installation)
 * [Run](#run)
-* [API calls](#api-calls)
 * [Pages](#endpoints)
+* [API calls](#api-calls)
 * [Licence](#licence)
 
 
 ## Introduction
 
 ## Technology
+
+* React.js
+* React Bootstrap
+* React-router
+* NPM
 
 ## Installation
 
@@ -26,3 +31,7 @@
 ## Pages
 
 ## Licence
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+* MIT License
+* Copyright 2021 © Luis Lopez

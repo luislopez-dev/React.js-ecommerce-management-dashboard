@@ -1,6 +1,6 @@
 # React.js Ecommerce management dashboard
 
-![alt text](https://news.america-digital.com/wp-content/uploads/2021/04/El-boom-del-eCommerce-tendencias-para-el-2021.jpg)
+![alt text](https://taktic.es/wp-content/uploads/2020/02/ventajas-del-ecommerce.jpg)
 
 ## Table of contents
 
@@ -15,6 +15,8 @@
 
 ## Introduction
 
+Ecommerce management dashboard designed for managing online stores
+
 ## Technology
 
 * React.js
@@ -24,7 +26,19 @@
 
 ## Installation
 
+
+1. Clone this repository `git clone React.js-ecommerce-management-dashboard`
+
+2. Go to the project `cd React.js-ecommerce-management-dashboard`
+
+3. Install the project dependencies `npm install`
+
+
 ## Run
+
+* For development and testing purposes run `npm run serve` in order to start the application
+
+* For deployment and production ready run `npm run build`. This command builds the production application
 
 ## Pages
 

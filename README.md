@@ -1,6 +1,6 @@
 # React.js Ecommerce management dashboard
 
-![alt text](https://taktic.es/wp-content/uploads/2020/02/ventajas-del-ecommerce.jpg)
+![alt text](https://www.romeropineda.com/wp-content/uploads/2020/11/store-with-credit-card-gift-boxes-buyers-illustration_1262-18980.jpg)
 
 ## Table of contents
 

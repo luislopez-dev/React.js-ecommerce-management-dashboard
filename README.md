@@ -1,4 +1,4 @@
-# React.js Ecommerce management dashboard
+# React.js ecommerce management dashboard
 
 ![alt text](https://www.romeropineda.com/wp-content/uploads/2020/11/store-with-credit-card-gift-boxes-buyers-illustration_1262-18980.jpg)
 

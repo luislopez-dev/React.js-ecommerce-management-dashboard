@@ -12,7 +12,6 @@
 * [API calls](#api-calls)
 * [Licence](#licence)
 
-
 ## Introduction
 
 Ecommerce management dashboard designed for managing online stores
@@ -41,6 +40,36 @@ Ecommerce management dashboard designed for managing online stores
 * For deployment and production ready run `npm run build`. This command builds the production application
 
 ## Pages
+
+### Login
+
+* Path: `/login`
+* Description:
+* Features: 
+
+### Resgister
+
+* Path: `/register`
+* Description:
+* Features: 
+
+### Home
+
+* Path: `/home`
+* Description:
+* Features: 
+
+### Create
+
+* Path: `/create`
+* Description:
+* Features: 
+
+### Update
+
+* Path: `/update/:productId`
+* Description:
+* Features: 
 
 ## API calls
 

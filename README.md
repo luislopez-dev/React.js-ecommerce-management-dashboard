@@ -1,6 +1,6 @@
 # React.js ecommerce management dashboard
 
-![alt text](https://www.romeropineda.com/wp-content/uploads/2020/11/store-with-credit-card-gift-boxes-buyers-illustration_1262-18980.jpg)
+![alt text](https://www.gokiebox.com/comparte/wp-content/uploads/2018/07/tienda-virtual-1.png)
 
 ## Table of contents
 

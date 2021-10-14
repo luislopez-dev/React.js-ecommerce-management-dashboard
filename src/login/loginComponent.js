@@ -2,6 +2,7 @@ import { login } from '../services/authService';
 import { Button, Container, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
+import  { Redirect } from 'react-router-dom'
 
 function Login() {
   
@@ -14,12 +15,15 @@ function Login() {
 
     login(email, password).then( res => {
         console.log(res);
-    });
-    
-  }
- 
+        if(res.token){
+          localStorage.setItem("user", JSON.stringify({id:res.userId, status:true, token: res.token}));
+          window.location.href = "/";
+        }
+    });    
+  } 
 
     return (
+
   <div>
 
   <Container>

@@ -1,18 +1,24 @@
 const axios = require("axios");
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTU3ZGE2ZTQxOGUzNDI4OGQzZWIxZGUiLCJpYXQiOjE2MzM2MTEzMzUsImV4cCI6MTYzMzY5NzczNX0.OeF2IPyMjEVtD_fI_WL7NRSkIiIJWAIUuik95RZTe7M";
+let token = "";
 
-export const createProduct = async (name, price, description, ammount, imgURL) => {
+if(localStorage.getItem("user")){
+  token = (JSON.parse(localStorage.getItem("user"))).token;
+}
+
+export const createProduct = async (name, brand, manufacturer, price, description, ammount, imgURL) => {
 
   let url = "http://localhost:8080/api";
 
-  const request =  await axios.post(url,  {name, price, description, ammount, imgURL}, {headers: {'Authorization': `Basic ${token}`}});
+  const request =  await axios.post(url,  {name, brand, manufacturer, price, description, ammount, imgURL}, {headers: {'Authorization': `Basic ${token}`}});
 
   return request;
 
 }
 
 export const getProducts = (offset, limit) => {
+
+  console.log("a")
 
   let url = "http://localhost:8080/api/products";
 

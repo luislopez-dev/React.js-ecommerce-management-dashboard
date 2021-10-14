@@ -15,6 +15,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
 
 function App() {
+
+  function logout(){
+    localStorage.removeItem("user");
+    window.location.href = "/login";
+  }
+
   return (
     <Router>
       <Navbar bg="dark" variant="dark">
@@ -29,7 +35,7 @@ function App() {
         </Nav>
                 
       <Nav className="">
-        <Button className="" variant="primary">
+        <Button onClick={()=>{logout()}} className="" variant="primary">
           <i className='fas fa-sign-out-alt'></i>
         </Button>
        </Nav>

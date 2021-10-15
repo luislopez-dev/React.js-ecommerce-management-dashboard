@@ -75,6 +75,8 @@ Ecommerce management dashboard designed for managing online stores
 * Description:
 * Features: 
 
+![alt text](https://i.imgur.com/hmhG0V3.png)
+
 ### Update
 
 * Path: `/update/:productId`

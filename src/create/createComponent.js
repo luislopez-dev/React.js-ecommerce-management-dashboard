@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { createProduct } from "../services/productsService";
-import { Form, Button, Container } from "react-bootstrap";
+import { Form, Button, Container, Row } from "react-bootstrap";
 
 function Create(){
 
@@ -24,8 +24,9 @@ function Create(){
     <div>
 
       <Container>
+      <Row className="g-5 mt-5">
 
-      <h2 className='mt-5 mb-5'>New Product</h2>
+      <h2>New Product</h2>
 
       <Form onSubmit={handleSubmit}>
 
@@ -68,6 +69,7 @@ function Create(){
 
       </Form>
 
+      </Row>
       </Container>
     </div>
  )   

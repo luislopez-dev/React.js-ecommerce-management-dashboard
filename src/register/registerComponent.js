@@ -1,4 +1,4 @@
-import { Form, Button, Container } from "react-bootstrap";
+import { Form, Button, Container, Row, Image, Col } from "react-bootstrap";
 import { register } from '../services/authService';
 import { useState } from "react";
 
@@ -22,35 +22,50 @@ function Register(){
       <div>
 
         <Container>
-        <h2 className='mt-5 mb-5'>Register</h2>
+        <h1 className='mt-5 mb-5'>Register</h1>
+        <Row>
+
+
+        <Col sm={6}>
 
         <Form onSubmit={handleSubmit}>
 
-          <Form.Group className="mb-3">
-            <Form.Label>Name</Form.Label>
-            <Form.Control required type="text" placeholder="name" onChange={(e) => setName(e.target.value)} />                 
-          </Form.Group>
+<Form.Group className="mb-3">
+  <Form.Label>Name</Form.Label>
+  <Form.Control required type="text" placeholder="name" onChange={(e) => setName(e.target.value)} />                 
+</Form.Group>
 
-          <Form.Group className="mb-3">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control required type="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} />                 
-          </Form.Group>
+<Form.Group className="mb-3">
+  <Form.Label>Email address</Form.Label>
+  <Form.Control required type="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} />                 
+</Form.Group>
 
-          <Form.Group className="mb-3">
-            <Form.Label>Password</Form.Label>
-            <Form.Control required type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
-          </Form.Group>
-          
-          <Form.Group className="mb-3">
-            <Form.Label>Confirm password</Form.Label>
-            <Form.Control required type="password" placeholder="password"/>
-          </Form.Group>
+<Form.Group className="mb-3">
+  <Form.Label>Password</Form.Label>
+  <Form.Control required type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
+</Form.Group>
 
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
+<Form.Group className="mb-3">
+  <Form.Label>Confirm password</Form.Label>
+  <Form.Control required type="password" placeholder="password"/>
+</Form.Group>
 
-        </Form>
+<Button variant="primary" type="submit">
+  Submit
+</Button>
+
+</Form>
+
+</Col>
+
+
+<Col sm={6}>
+
+
+        <Image fluid src="https://static.vecteezy.com/system/resources/previews/002/038/669/non_2x/data-analysis-concept-vector.jpg" />
+</Col>
+        </Row>
+
         </Container>
       </div>
     )

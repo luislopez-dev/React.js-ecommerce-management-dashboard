@@ -47,6 +47,8 @@ Ecommerce management dashboard designed for managing online stores
 * Description:
 * Features: 
 
+![alt text](https://i.imgur.com/p1Cdt5e.png)
+
 ### Resgister
 
 * Path: `/register`

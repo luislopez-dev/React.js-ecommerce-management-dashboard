@@ -106,7 +106,7 @@ function Home(){
             <Image src={item.imgURL} rounded style={{width:'100px'}}/> 
            </td>
            <td >{item.name}</td>
-           <td>Q{item.price}</td>
+           <td>${item.price}</td>
            <td>{item.ammount}</td>
            <td className="overflow-hidden">
              <div style={{"height":"100px", "overflow":"hidden", textAlign: "justify" }}>{item.description}</div>

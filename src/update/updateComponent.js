@@ -51,7 +51,7 @@ function Update(){
 
 <Form.Group className="mb-2">
     <Form.Label>Description</Form.Label>
-    <Form.Control value={product.description} onChange={(e)=>{setProduct({...product, description:e.target.value})}}  placeholder="Description" required></Form.Control>
+    <Form.Control as="textarea" rows={3} value={product.description} onChange={(e)=>{setProduct({...product, description:e.target.value})}}  placeholder="Description" required></Form.Control>
 </Form.Group>
 
 <Form.Group className="mb-2">

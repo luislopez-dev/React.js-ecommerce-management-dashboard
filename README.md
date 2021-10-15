@@ -83,7 +83,7 @@ Ecommerce management dashboard designed for managing online stores
 * Description:
 * Features: 
 
-![alt text](https://i.imgur.com/6rgh2oS.png)
+![alt text](https://i.imgur.com/OiYG10i.png)
 
 ## API calls
 

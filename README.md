@@ -55,6 +55,8 @@ Ecommerce management dashboard designed for managing online stores
 * Description:
 * Features: 
 
+![alt text](https://i.imgur.com/rX8S5eu.png)
+
 ### Home
 
 * Path: `/home`

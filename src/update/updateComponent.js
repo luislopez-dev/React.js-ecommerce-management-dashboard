@@ -1,4 +1,4 @@
-import { Form, Button, Container } from "react-bootstrap";
+import { Form, Button, Container, Row } from "react-bootstrap";
 import { getProduct, updateProduct } from "../services/productsService";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -32,11 +32,10 @@ function Update(){
     console.log(await request);
   }
 
-
   return (
-    <div>
     <Container >
-    <h2 className='mt-5 mb-5'>Update product</h2>
+    <Row className="g-5 mt-5">
+    <h2>Update product</h2>
 
   <Form onSubmit={handleSubmit}>
 
@@ -68,9 +67,9 @@ function Update(){
 <Button className="mt-2" type="submit" variant="primary">Update</Button>
 
 </Form>
-
+</Row>
   </Container>
-  </div>);
+);
 
 
 }

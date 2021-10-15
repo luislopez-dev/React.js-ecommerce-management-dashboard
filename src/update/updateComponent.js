@@ -1,4 +1,4 @@
-import { Form, Button, Container, Row } from "react-bootstrap";
+import { Form, Button, Container, Row, Col, Image } from "react-bootstrap";
 import { getProduct, updateProduct } from "../services/productsService";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -36,7 +36,7 @@ function Update(){
     <Container >
     <Row className="g-5 mt-5">
     <h2>Update product</h2>
-
+<Col sm={6}>
   <Form onSubmit={handleSubmit}>
 
 <Form.Group className="mb-2">
@@ -67,6 +67,12 @@ function Update(){
 <Button className="mt-2" type="submit" variant="primary">Update</Button>
 
 </Form>
+
+</Col>
+
+<Col sm={6}>
+<Image fluid src={product.imgURL || "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"}></Image>
+</Col>
 </Row>
   </Container>
 );

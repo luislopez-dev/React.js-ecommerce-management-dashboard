@@ -9,10 +9,8 @@ function NavbarComponent(params) {
  
     if(localStorage.getItem("user")){
 
-
-
     return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark" fixed="top">
   <Container>
   <Navbar.Brand href="/home">
   <i className='fas fa-home'></i>

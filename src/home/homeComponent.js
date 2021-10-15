@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts, deleteProduct } from "../services/productsService";
-import { Button, Table, Container, Modal, Image, Pagination, Form, FormControl, InputGroup} from "react-bootstrap";
+import { Button, Row, Table, Container, Modal, Image, Pagination, Form, FormControl, InputGroup} from "react-bootstrap";
 import { useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 
@@ -69,7 +69,7 @@ function Home(){
   return (
 
     <Container>
-    <h2 className='mt-5 mb-5'>Products</h2>
+    <Row className="g-5 mt-5">
 
     <Form action="/home">
     <InputGroup className="mb-3" style={{width:"300px"}}>
@@ -101,14 +101,16 @@ function Home(){
 
        <tbody>
        {products.map( (item, i) => { return (
-         <tr key={i}>
+         <tr key={i} className="overflow-hidden">
            <td> 
             <Image src={item.imgURL} rounded style={{width:'100px'}}/> 
            </td>
            <td >{item.name}</td>
            <td>Q{item.price}</td>
            <td>{item.ammount}</td>
-           <td>{item.description}</td>
+           <td className="overflow-hidden">
+             <div style={{"height":"100px", "overflow":"hidden", textAlign: "justify" }}>{item.description}</div>
+           </td>
            <td>
              <Button variant="warning" href={"/update/"+item._id}>
              <i className='fas fa-edit'></i>
@@ -117,7 +119,6 @@ function Home(){
            <td>
             <Button variant="danger" onClick={() => handleShow(item)}>
             <i className='fas fa-trash-alt'></i>
-
             </Button>
           </td>
          </tr>
@@ -126,8 +127,7 @@ function Home(){
        </tbody>
      </Table>
 
-      <Pagination>{items}</Pagination>
-
+     <Pagination className="justify-content-center">{items}</Pagination>
 
      <Modal show={show} onHide={handleClose}>
        <Modal.Header closeButton>
@@ -149,6 +149,7 @@ function Home(){
        </Modal.Footer>
      </Modal>
 
+    </Row>
     </Container>
   )   
 }

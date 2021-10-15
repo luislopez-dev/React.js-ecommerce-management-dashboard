@@ -63,6 +63,8 @@ Ecommerce management dashboard designed for managing online stores
 * Description:
 * Features: 
 
+![alt text](https://i.imgur.com/KDrTBrh.png)
+
 ### Create
 
 * Path: `/create`

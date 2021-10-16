@@ -18,8 +18,6 @@ export const createProduct = async (name, brand, manufacturer, price, descriptio
 
 export const getProducts = (offset, limit) => {
 
-  console.log("a")
-
   let url = "http://localhost:8080/api/products";
 
   return axios.post(url, {offset, limit});

@@ -19,17 +19,8 @@ function Update(){
   }, [])
 
   async function handleSubmit (e){
-  
     e.preventDefault();
-    const request = await updateProduct(
-                       product._id, 
-                       product.name, 
-                       product.price, 
-                       product.description, 
-                       product.ammount, 
-                       product.imgURL);                    
-
-    console.log(await request);
+    await updateProduct(product._id, product.name, product.price, product.description, product.ammount, product.imgURL); 
   }
 
   return (

@@ -1,8 +1,7 @@
 import { login } from '../services/authService';
 import { Button, Row, Col, Container, Form, Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from 'react';
-import  { Redirect } from 'react-router-dom'
+import { useState } from 'react';
 
 function Login() {
   
@@ -14,7 +13,6 @@ function Login() {
     event.preventDefault();
 
     login(email, password).then( res => {
-        console.log(res);
         if(res.token){
           localStorage.setItem("user", JSON.stringify({id:res.userId, status:true, token: res.token}));
           window.location.href = "/";

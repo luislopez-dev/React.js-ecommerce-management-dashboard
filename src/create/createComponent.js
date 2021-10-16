@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { createProduct } from "../services/productsService";
 import { Form, Button, Container, Row } from "react-bootstrap";
 
@@ -8,9 +8,8 @@ function Create(){
 
   async function handleSubmit (e){
   
-    console.log(product)
     e.preventDefault();
-    const request = await createProduct(product.name, 
+    await createProduct(product.name, 
                        product.brand,
                        product.manufacturer,
                        product.price, 

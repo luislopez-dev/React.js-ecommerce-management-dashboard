@@ -22,9 +22,9 @@ function Register(){
       <div>
 
         <Container>
-        <h1 className='mt-5 mb-5'>Register</h1>
-        <Row>
+        <Row className='mt-5 mb-5'>
 
+        <h1 className='mt-5 mb-5'>Register</h1>
 
         <Col sm={6}>
 

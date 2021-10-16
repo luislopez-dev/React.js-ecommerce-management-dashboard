@@ -1,21 +1,16 @@
 import { useEffect, useState } from "react";
 import { getProducts, deleteProduct } from "../services/productsService";
 import { Button, Row, Table, Container, Modal, Image, Pagination, Form, FormControl, InputGroup} from "react-bootstrap";
-import { useParams, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
-async function search (name, offset, limit){
- const response = await axios.post('http://localhost:8080/api/search', {name, offset, limit});
-}
-
 function Home(){
 
   let query = useQuery();
-  const { id } = useParams();
   const [show, setShow] = useState(false);
   const [products, setProducts] = useState([]);
   const [itemToDelete, setItemToDelete] = useState({});
@@ -28,7 +23,7 @@ function Home(){
   
   const handleClose = (id) => { setShow(false); 
                                 if(id){ deleteProduct(id); 
-                                 setProducts(products.filter(item => item._id != id));
+                                 setProducts(products.filter(item => item._id !== id));
                                 }
                               };
   const handleShow = (obj) => {setShow(true); setItemToDelete(obj);}

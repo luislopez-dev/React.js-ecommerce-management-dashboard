@@ -65,6 +65,7 @@ function Home(){
          aria-label="search"
          aria-describedby="btnGroupAddon"
          name="search"
+         autoComplete="false"
        />
       </InputGroup>
      </Form>

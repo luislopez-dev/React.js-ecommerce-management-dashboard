@@ -5,11 +5,9 @@ function ProtectedRoute({ component: Component, ...restOfProps }) {
   
   let isAuthenticated = false;
 
-
-  if(localStorage.getItem("user")){
+  if(localStorage.getItem("token")){
     isAuthenticated = true;
   }
-
 
   return (
     <Route

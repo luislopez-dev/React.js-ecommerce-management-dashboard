@@ -1,12 +1,12 @@
 import {Container, Navbar, Nav, Button} from "react-bootstrap"
 
 function logout(){
-  localStorage.removeItem("user");
+  localStorage.removeItem("token");
   window.location.href = "/login";
 }
 
 function NavbarComponent() {
-  const isAuthenticated = localStorage.getItem("user") || false;
+  const isAuthenticated = localStorage.getItem("token") || false;
  
   if(isAuthenticated){
 

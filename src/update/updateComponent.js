@@ -18,6 +18,7 @@ function Update(){
   async function handleSubmit (e){
     e.preventDefault();
     await updateProduct(product._id, product.name, product.brand, product.manufacturer, product.price, product.description, product.ammount, product.imgURL); 
+    window.location.href = "/";
   }
 
   return (

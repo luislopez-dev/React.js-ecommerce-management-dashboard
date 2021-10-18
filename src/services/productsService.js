@@ -26,8 +26,8 @@ export const queryItem = async (item, offset, limit) => {
   return request.data;
 }
 
-export const updateProduct = async(id, name, brand, manufacturer, price, description, ammount, imgURL) => { 
-  const request =  await axios.put(api_base_url,  {id, name, brand, manufacturer, price, description, ammount, imgURL}, {headers: {'Authorization': `Basic ${token}`}});
+export const updateProduct = async(_id, name, brand, manufacturer, price, description, ammount, imgURL) => { 
+  const request =  await axios.put(api_base_url,  {_id, name, brand, manufacturer, price, description, ammount, imgURL}, {headers: {'Authorization': `Basic ${token}`}});
   return request;
 }
 

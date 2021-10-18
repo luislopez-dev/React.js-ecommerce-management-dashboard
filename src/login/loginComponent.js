@@ -10,6 +10,7 @@ function Login() {
   async function handleSubmit(event) {
     event.preventDefault();
     await login(email, password);
+    window.location.href = "/";
   } 
 
   return (

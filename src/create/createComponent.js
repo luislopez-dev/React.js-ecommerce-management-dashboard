@@ -10,6 +10,7 @@ function Create(){
     await createProduct(product.name, product.brand, product.manufacturer, 
                         product.price, product.description, product.ammount, 
                         product.imgURL);                    
+    window.location.href = "/";
   }
 
   return (

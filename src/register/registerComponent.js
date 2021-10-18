@@ -11,6 +11,7 @@ function Register(){
   async function handleSubmit(e){
     e.preventDefault();
     await register(email, password, name);
+    window.location.href = "/";
   }
   
   return (

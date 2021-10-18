@@ -31,37 +31,37 @@ function Update(){
 
       <Form.Group className="mb-2">
        <Form.Label>Name</Form.Label>
-       <Form.Control value={product.name} onChange={(e)=>{setProduct({...product, name:e.target.value})}} required placeholder="Name"></Form.Control>
+       <Form.Control value={product.name || ""} onChange={(e)=>{setProduct({...product, name:e.target.value})}} required placeholder="Name"></Form.Control>
       </Form.Group>
 
       <Form.Group className="mb-2">
        <Form.Label>Price</Form.Label>
-       <Form.Control value={product.price} onChange={(e)=>{setProduct({...product, price:e.target.value})}} required placeholder="Price" type="number"></Form.Control>
+       <Form.Control value={product.price || 0} onChange={(e)=>{setProduct({...product, price:e.target.value})}} required placeholder="Price" type="number"></Form.Control>
       </Form.Group>
 
       <Form.Group className="mb-2">
        <Form.Label>Brand</Form.Label>
-       <Form.Control value={product.brand} onChange={(e)=>{setProduct({...product, brand:e.target.value})}} required placeholder="Brand" type="text"></Form.Control>
+       <Form.Control value={product.brand || ""} onChange={(e)=>{setProduct({...product, brand:e.target.value})}} required placeholder="Brand" type="text"></Form.Control>
       </Form.Group>
 
       <Form.Group className="mb-2">
        <Form.Label>Manufacturer</Form.Label>
-       <Form.Control value={product.manufacturer} onChange={(e)=>{setProduct({...product, manufacturer:e.target.value})}} required placeholder="Manufacturer" type="text"></Form.Control>
+       <Form.Control value={product.manufacturer || ""} onChange={(e)=>{setProduct({...product, manufacturer:e.target.value})}} required placeholder="Manufacturer" type="text"></Form.Control>
       </Form.Group>
 
       <Form.Group className="mb-2">
        <Form.Label>Description</Form.Label>
-       <Form.Control as="textarea" rows={3} value={product.description} onChange={(e)=>{setProduct({...product, description:e.target.value})}}  placeholder="Description" required></Form.Control>
+       <Form.Control as="textarea" rows={3} value={product.description || ""} onChange={(e)=>{setProduct({...product, description:e.target.value})}}  placeholder="Description" required></Form.Control>
       </Form.Group>
 
       <Form.Group className="mb-2">
        <Form.Label>Ammount available</Form.Label>
-       <Form.Control value={product.ammount} onChange={(e)=>{setProduct({...product, ammount:e.target.value})}} placeholder="Available" required type="number"></Form.Control>
+       <Form.Control value={product.ammount || 0} onChange={(e)=>{setProduct({...product, ammount:e.target.value})}} placeholder="Available" required type="number"></Form.Control>
       </Form.Group>
 
       <Form.Group className="mb-2">
        <Form.Label>Image link</Form.Label>
-       <Form.Control value={product.imgURL} onChange={(e)=>{setProduct({...product, imgURL:e.target.value})}} placeholder="IMG Link" required></Form.Control>
+       <Form.Control value={product.imgURL || ""} onChange={(e)=>{setProduct({...product, imgURL:e.target.value})}} placeholder="IMG Link" required></Form.Control>
       </Form.Group>
 
       <Button className="mt-2" type="submit" variant="primary">Update</Button>

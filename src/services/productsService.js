@@ -1,5 +1,5 @@
 const axios = require("axios");
-
+const api_base_url = "http://localhost:8080/api";
 let token = "";
 
 if(localStorage.getItem("user")){
@@ -7,38 +7,29 @@ if(localStorage.getItem("user")){
 }
 
 export const createProduct = async (name, brand, manufacturer, price, description, ammount, imgURL) => {
-
   let url = "http://localhost:8080/api";
-
   const request =  await axios.post(url,  {name, brand, manufacturer, price, description, ammount, imgURL}, {headers: {'Authorization': `Basic ${token}`}});
-
   return request;
-
 }
 
-export const getProducts = (offset, limit) => {
-
-  let url = "http://localhost:8080/api/products";
-
-  return axios.post(url, {offset, limit});
-
+export const getProducts = async(offset, limit) => {
+  const request =  await axios.post(`${api_base_url}/products`, {offset, limit});
+  return request.data;
 }
 
-export const getProduct = (id) => {
-
-  let url = `http://localhost:8080/api/${id}`;
-
-  return fetch(url)
-  .then(data => data.json());
-
+export const getProduct = async (id) => {
+  const request = await axios.get(`${api_base_url}/${id}`);
+  return request;
 }
 
-export const updateProduct = async(id, name, price, description, ammount, imgURL) => {
+// Search
+export const queryItem = async (item, offset, limit) => {
+  const request = await axios.post(`${api_base_url}/search`, {item, offset, limit});
+  return request.data;
+}
 
-  let url = `http://localhost:8080/api`;
- 
-  const request =  await axios.put(url,  {id, name, price, description, ammount, imgURL}, {headers: {'Authorization': `Basic ${token}`}});
-
+export const updateProduct = async(id, name, brand, manufacturer, price, description, ammount, imgURL) => { 
+  const request =  await axios.put(api_base_url,  {id, name, brand, manufacturer, price, description, ammount, imgURL}, {headers: {'Authorization': `Basic ${token}`}});
   return request;
 }
 

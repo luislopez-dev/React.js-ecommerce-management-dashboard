@@ -1,30 +1,15 @@
-export const register = (email, password, name) => {
+import axios from "axios";
+const api_base_url = "http://localhost:8080/api/auth";
 
-    let url = "http://localhost:8080/api/auth/register";
-
-    return fetch(url, {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({email, password, name })
-    })
-    .then(data => data.json());
+export const register = async (email, password, name) => {
+    const request = await axios.post(`${api_base_url}/register`, {email, password, name});
+    return request;
 }
 
-export const login = (email, password) => {
-
-    let url = "http://localhost:8080/api/auth/login";
-
-    return fetch(url, {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({email, password})
-    })
-    .then(data => data.json());
-
+export const login = async (email, password) => {
+    const request = await axios.post(`${api_base_url}/login`, {email, password});
+    if(Number(request.status) === 200 && request.data.token){
+        localStorage.setItem("user", JSON.stringify(request.data));
+    }
+    return request;
 }

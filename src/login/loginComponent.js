@@ -1,6 +1,5 @@
 import { login } from '../services/authService';
 import { Button, Row, Col, Container, Form, Image } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 
 function Login() {
@@ -8,58 +7,42 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleSubmit(event) {
-
+  async function handleSubmit(event) {
     event.preventDefault();
-
-    login(email, password).then( res => {
-        if(res.token){
-          localStorage.setItem("user", JSON.stringify({id:res.userId, status:true, token: res.token}));
-          window.location.href = "/";
-        }
-    });    
+    await login(email, password);
   } 
 
-    return (
-
-  <div>
-
+  return (
   <Container>
+   <Row>
 
+    <Col xm={12} sm={6}>
+     <h1 className='mt-5 mb-5'>Login</h1>
 
-  <Row>
+     <Form onSubmit={handleSubmit} className="mt-5">
+      <Form.Group className="mb-4" controlId="formBasicEmail">
+       <Form.Label>Email address</Form.Label>
+       <Form.Control required type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value) } />   
+      </Form.Group>
 
-<Col xm={12} sm={6}>
+      <Form.Group className="mb-5" controlId="formBasicPassword">
+       <Form.Label>Password</Form.Label>
+       <Form.Control required type="password" placeholder="Password" onChange={ (e) => setPassword(e.target.value) } />
+      </Form.Group>
 
-<h1 className='mt-5 mb-5'>Login</h1>
+      <Button variant="primary" type="submit" >
+       Submit
+      </Button>
+     </Form>
 
-  <Form onSubmit={handleSubmit} className="mt-5">
+    </Col>
 
-  <Form.Group className="mb-4" controlId="formBasicEmail">
-      <Form.Label>Email address</Form.Label>
-      <Form.Control required type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value) } />   
-  </Form.Group>
+    <Col xm={0} sm={6}>
+     <Image fluid src="https://static.vecteezy.com/system/resources/previews/002/037/248/non_2x/data-analysis-concept-vector.jpg"></Image>
+    </Col>
 
-  <Form.Group className="mb-5" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control required type="password" placeholder="Password" onChange={ (e) => setPassword(e.target.value) } />
-  </Form.Group>
-  <Button variant="primary" type="submit" >
-    Submit
-  </Button>
-</Form>
-</Col>
-
-<Col xm={0} sm={6}>
-  <Image fluid src="https://static.vecteezy.com/system/resources/previews/002/037/248/non_2x/data-analysis-concept-vector.jpg"></Image>
-</Col>
-
-</Row>
-</Container>
-
-
-    </div>
-    )
+   </Row>
+  </Container>
+  )
 }
-
 export default Login;

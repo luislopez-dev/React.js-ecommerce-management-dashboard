@@ -8,66 +8,52 @@ function Register(){
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleSubmit(e){
-
+  async function handleSubmit(e){
     e.preventDefault();
-
-    register(email, password, name).then(res => {
-      console.log(res);
-    })
-
+    await register(email, password, name);
   }
   
-    return (
-      <div>
+  return (
+  <Container>
+   <Row className='mt-5 mb-5'>
+    <h1 className='mt-5 mb-5'>Register</h1>
 
-        <Container>
-        <Row className='mt-5 mb-5'>
+    <Col sm={6}>
+     <Form onSubmit={handleSubmit}>
 
-        <h1 className='mt-5 mb-5'>Register</h1>
+      <Form.Group className="mb-3">
+       <Form.Label>Name</Form.Label>
+       <Form.Control required type="text" placeholder="name" onChange={(e) => setName(e.target.value)} />                 
+      </Form.Group>
 
-        <Col sm={6}>
+      <Form.Group className="mb-3">
+       <Form.Label>Email address</Form.Label>
+       <Form.Control required type="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} />                 
+      </Form.Group>
 
-        <Form onSubmit={handleSubmit}>
+      <Form.Group className="mb-3">
+       <Form.Label>Password</Form.Label>
+       <Form.Control required type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
+      </Form.Group>
 
-<Form.Group className="mb-3">
-  <Form.Label>Name</Form.Label>
-  <Form.Control required type="text" placeholder="name" onChange={(e) => setName(e.target.value)} />                 
-</Form.Group>
+      <Form.Group className="mb-3">
+       <Form.Label>Confirm password</Form.Label>
+       <Form.Control required type="password" placeholder="password"/>
+      </Form.Group>
 
-<Form.Group className="mb-3">
-  <Form.Label>Email address</Form.Label>
-  <Form.Control required type="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} />                 
-</Form.Group>
+      <Button variant="primary" type="submit">
+       Submit
+      </Button>
 
-<Form.Group className="mb-3">
-  <Form.Label>Password</Form.Label>
-  <Form.Control required type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
-</Form.Group>
+     </Form>
+    </Col>
 
-<Form.Group className="mb-3">
-  <Form.Label>Confirm password</Form.Label>
-  <Form.Control required type="password" placeholder="password"/>
-</Form.Group>
-
-<Button variant="primary" type="submit">
-  Submit
-</Button>
-
-</Form>
-
-</Col>
-
-
-<Col sm={6}>
-
-
-        <Image fluid src="https://static.vecteezy.com/system/resources/previews/002/038/669/non_2x/data-analysis-concept-vector.jpg" />
-</Col>
-        </Row>
-
-        </Container>
-      </div>
-    )
+    <Col sm={6}>
+     <Image fluid src="https://static.vecteezy.com/system/resources/previews/002/038/669/non_2x/data-analysis-concept-vector.jpg" />
+    </Col>
+        
+   </Row>
+  </Container>
+  )
 }
 export default Register;

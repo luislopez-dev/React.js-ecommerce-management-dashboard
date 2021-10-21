@@ -85,8 +85,6 @@ Ecommerce management dashboard designed for managing online stores
 
 ![alt text](https://i.imgur.com/OiYG10i.png)
 
-## API calls
-
 ## Licence
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
